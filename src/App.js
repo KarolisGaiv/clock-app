@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './styles/main.scss';
+import Quote from './components/Quote/Quote';
 
 function App() {
   const [screenSize, setScreenSize] = useState();
@@ -20,7 +21,11 @@ function App() {
     }
   }
 
-  return <div className='App'>{console.log(screenSize)}</div>;
+  return (
+    <div>
+      <Quote />
+    </div>
+  );
 }
 
 export default App;
