@@ -21,7 +21,7 @@ function App() {
     }
   }
 
-  return <div>{<Quote />}</div>;
+  return <main className='content'>{<Quote />}</main>;
 }
 
 export default App;
