@@ -4,7 +4,7 @@
   column-gap: 16px;
   color: $white;
   display: grid;
-  grid-template-columns: 1fr 16px;
+  grid-template-columns: 1fr 18px;
   font-size: 12px;
   line-height: 22px;
 
@@ -16,4 +16,10 @@
   &__author {
     margin-top: 8px;
   }
+}
+
+.refresh-btn {
+  align-self: start;
+  background: none;
+  border: none;
 }
