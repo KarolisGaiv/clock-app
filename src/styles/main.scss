@@ -1,23 +1,29 @@
 @import './base/base';
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 html {
-  background: url(../assets/mobile/bg-image-daytime.jpg) no-repeat center center
-    fixed;
-  background-size: cover;
   height: 100%;
 }
 
-body {
-  background: #000000;
-  font-family: $main-font;
-  min-height: 100vh;
-  mix-blend-mode: normal;
-  opacity: 0.4;
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: #d8d8d8;
   padding: 32px 26px 40px 26px;
+  // background-image: url(../assets/mobile/bg-image-daytime.jpg);
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center;
 }

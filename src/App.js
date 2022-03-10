@@ -21,11 +21,7 @@ function App() {
     }
   }
 
-  return (
-    <div>
-      <Quote />
-    </div>
-  );
+  return <div>{<Quote />}</div>;
 }
 
 export default App;
