@@ -21,14 +21,14 @@ function Quote() {
 
   return (
     <div className='quote-container'>
-      <div className='quote-container__top'>
-        <p className='quote-container__text'>"{quote}"</p>
-        <button>
-          <img src={RefreshBtn} alt='' />
-        </button>
+      <div className='quote-container__text-wrapper'>
+        <div className='quote-container__quote'>"{quote}"</div>
+        <div className='quote-container__author'>{author}</div>
       </div>
-      <div className='quote-container-bottom'>
-        <p>{author}</p>
+      <div className='quote-container__btn-wrapper'>
+        <button>
+          <img src={RefreshBtn} alt='refresh button' />
+        </button>
       </div>
     </div>
   );
