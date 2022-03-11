@@ -21,7 +21,12 @@ function App() {
     }
   }
 
-  return <main className='content'>{<Quote />}</main>;
+  return (
+    <div className='content__wrapper'>
+      <div className='background background --day'></div>
+      <main>{<Quote />}</main>
+    </div>
+  );
 }
 
 export default App;
