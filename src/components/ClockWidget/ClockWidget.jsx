@@ -27,7 +27,11 @@ function ClockWidget() {
     <div className='clock-container'>
       <div className='clock-container__greeting'>Greeting placeholder</div>
       <div className='clock-container__time'>
-        {date.hours}:{date.minutes} {date.abbreviation}
+        <p className='clock-container__time__current-date'>{date.hours}:</p>
+        <p className='clock-container__time__current-date'>{date.minutes}</p>
+        <span className='clock-container__time__time-zone'>
+          {date.abbreviation}
+        </span>
       </div>
       <div className='clock-container__location'>Location placeholder</div>
     </div>

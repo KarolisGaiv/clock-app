@@ -2,4 +2,22 @@
 
 .clock-container {
   margin-top: 225px;
+
+  &__time {
+    display: flex;
+
+    &__current-date {
+      font-size: 100px;
+      font-weight: 700;
+      line-height: 100px;
+    }
+
+    &__time-zone {
+      align-items: flex-end;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 28px;
+      margin-left: 5px;
+    }
+  }
 }
