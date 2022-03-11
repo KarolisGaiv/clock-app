@@ -3,8 +3,16 @@
 .clock-container {
   margin-top: 225px;
 
+  &__greeting {
+    font-size: 15px;
+    letter-spacing: 3px;
+    line-height: 25px;
+    text-transform: uppercase;
+  }
+
   &__time {
     display: flex;
+    margin: 16px 0;
 
     &__current-date {
       font-size: 100px;
