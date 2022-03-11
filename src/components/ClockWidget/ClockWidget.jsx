@@ -1,6 +1,6 @@
 import './clockWidget.scss';
-
 import React, { useEffect, useState } from 'react';
+import SunIcon from '../../assets/desktop/icon-sun.svg';
 
 function ClockWidget() {
   const [date, setDate] = useState({});
@@ -36,7 +36,11 @@ function ClockWidget() {
 
   return (
     <div className='clock-container'>
-      <div className='clock-container__greeting'>{greeting}</div>
+      <div className='clock-container__greeting'>
+        <img src={SunIcon} alt='' />
+
+        {greeting}
+      </div>
       <div className='clock-container__time'>
         <p className='clock-container__time__current-date'>{date.hours}:</p>
         <p className='clock-container__time__current-date'>{date.minutes}</p>
