@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './styles/main.scss';
 import Quote from './components/Quote/Quote';
+import ClockWidget from './components/ClockWidget/ClockWidget';
 
 function App() {
   const [screenSize, setScreenSize] = useState();
@@ -24,7 +25,10 @@ function App() {
   return (
     <div className='content__wrapper'>
       <div className='background background --day'></div>
-      <main>{<Quote />}</main>
+      <main>
+        <Quote />
+        <ClockWidget />
+      </main>
     </div>
   );
 }
