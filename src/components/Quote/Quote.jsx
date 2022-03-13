@@ -19,8 +19,8 @@ function Quote() {
     setAuthor(data.author);
   };
 
-  function test() {
-    console.log('test');
+  function getNewQuote() {
+    fetchQuote();
   }
 
   return (
@@ -29,7 +29,7 @@ function Quote() {
         <div className='quote-container__quote'>"{quote}"</div>
         <div className='quote-container__author'>{author}</div>
       </div>
-      <button className='refresh-btn' onClick={test}>
+      <button className='refresh-btn' onClick={getNewQuote}>
         <img src={RefreshBtn} alt='refresh button' />
       </button>
     </div>
