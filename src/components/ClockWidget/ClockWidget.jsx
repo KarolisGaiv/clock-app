@@ -1,10 +1,12 @@
 import './clockWidget.scss';
 import React, { useEffect, useState } from 'react';
 import SunIcon from '../../assets/desktop/icon-sun.svg';
+import MoonIcon from '../../assets/desktop/icon-moon.svg';
 
 function ClockWidget() {
   const [date, setDate] = useState({});
   const [greeting, setGreeting] = useState('Good afternoon');
+  const [timeOfDay, setTimeofDay] = useState('day');
 
   useEffect(() => {
     fetchTime();
@@ -27,17 +29,24 @@ function ClockWidget() {
   function getGreeting() {
     if (date.hours >= 12 && date.hours < 18) {
       setGreeting('Good afternoon');
+      setTimeofDay('day');
     } else if (date.hours >= 18 && date.hours < 5) {
       setGreeting('Good evening');
+      setTimeofDay('night');
     } else {
       setGreeting('Good morning');
+      setTimeofDay('day');
     }
   }
 
   return (
     <div className='clock-container'>
       <div className='clock-container__greeting'>
-        <img src={SunIcon} alt='' />
+        {timeOfDay === 'day' ? (
+          <img src={SunIcon} alt='sun icon' />
+        ) : (
+          <img src={MoonIcon} alt='moon icon' />
+        )}
 
         {greeting}
       </div>
