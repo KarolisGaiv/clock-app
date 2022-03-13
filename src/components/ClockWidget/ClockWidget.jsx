@@ -11,7 +11,14 @@ function ClockWidget() {
   useEffect(() => {
     fetchTime();
     getGreeting();
-  }, [date]);
+
+    const interval = setInterval(() => {
+      fetchTime();
+      getGreeting();
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const fetchTime = async () => {
     const response = await fetch('http://worldtimeapi.org/api/ip');
