@@ -7,10 +7,12 @@ function ClockWidget() {
   const [date, setDate] = useState({});
   const [greeting, setGreeting] = useState('Good afternoon');
   const [timeOfDay, setTimeofDay] = useState('day');
+  const [location, setLocation] = useState({});
 
   useEffect(() => {
     fetchTime();
     getGreeting();
+    getLocation();
 
     const interval = setInterval(() => {
       fetchTime();
@@ -46,6 +48,18 @@ function ClockWidget() {
     }
   }
 
+  const getLocation = async () => {
+    const response = await fetch(
+      'https://api.freegeoip.app/json/?apikey=2be569c0-a2af-11ec-8a82-ebd58e49ede1'
+    );
+    const data = await response.json();
+    let locationObj = {
+      city: data.city,
+      country_code: data.country_code,
+    };
+    setLocation(locationObj);
+  };
+
   return (
     <div className='clock-container'>
       <div className='clock-container__greeting'>
@@ -64,7 +78,9 @@ function ClockWidget() {
           {date.abbreviation}
         </span>
       </div>
-      <div className='clock-container__location'>Location placeholder</div>
+      <div className='clock-container__location'>
+        In {location.city}, {location.country_code}{' '}
+      </div>
     </div>
   );
 }
