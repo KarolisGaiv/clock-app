@@ -2,6 +2,8 @@ import './clockWidget.scss';
 import React, { useEffect, useState } from 'react';
 import SunIcon from '../../assets/desktop/icon-sun.svg';
 import MoonIcon from '../../assets/desktop/icon-moon.svg';
+import ArrowUp from '../../assets/desktop/icon-arrow-up.svg';
+import ArrowDown from '../../assets/desktop/icon-arrow-down.svg';
 
 function ClockWidget() {
   const [date, setDate] = useState({});
@@ -81,6 +83,10 @@ function ClockWidget() {
       <div className='clock-container__location'>
         In {location.city}, {location.country_code}{' '}
       </div>
+      <button className='expand-btn'>
+        more
+        <img className='test' src={ArrowDown} alt='' />
+      </button>
     </div>
   );
 }
