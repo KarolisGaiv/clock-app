@@ -5,7 +5,7 @@ import MoonIcon from '../../assets/desktop/icon-moon.svg';
 import ArrowUp from '../../assets/desktop/icon-arrow-up.svg';
 import ArrowDown from '../../assets/desktop/icon-arrow-down.svg';
 
-function ClockWidget() {
+function ClockWidget({ setCurrentTime }) {
   const [date, setDate] = useState({});
   const [greeting, setGreeting] = useState('Good afternoon');
   const [timeOfDay, setTimeofDay] = useState('day');
@@ -35,9 +35,11 @@ function ClockWidget() {
       abbreviation: data.abbreviation,
     };
     setDate(dateObj);
+    setCurrentTime(dateObj.hours);
   };
 
   function getGreeting() {
+    console.log(date.hours);
     if (date.hours >= 12 && date.hours < 18) {
       setGreeting('Good afternoon');
       setTimeofDay('day');

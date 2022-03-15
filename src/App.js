@@ -5,6 +5,7 @@ import ClockWidget from './components/ClockWidget/ClockWidget';
 
 function App() {
   const [screenSize, setScreenSize] = useState();
+  const [currentTime, setCurrentTime] = useState();
 
   useEffect(() => {
     getScreenSize();
@@ -24,10 +25,17 @@ function App() {
 
   return (
     <div className='content__wrapper'>
-      <div className='background background --day'></div>
+      {/* <div className='background background --day'></div> */}
+      <div
+        className={
+          currentTime >= 18
+            ? 'background background --night'
+            : 'background background --day'
+        }
+      ></div>
       <main>
         <Quote />
-        <ClockWidget />
+        <ClockWidget setCurrentTime={setCurrentTime} />
       </main>
     </div>
   );

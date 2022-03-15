@@ -43,6 +43,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  &.--night {
+    background-image: url(../assets/mobile/bg-image-nighttime.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .background::before {
