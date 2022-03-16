@@ -33,6 +33,10 @@ function ClockWidget({ setDayPhase }) {
       hours: current_date.getHours(),
       minutes: ('0' + current_date.getMinutes()).slice(-2),
       abbreviation: data.abbreviation,
+      timezone: data.timezone,
+      dayOfyear: data.day_of_year,
+      dayOfWeek: data.day_of_week,
+      week: data.week_number,
     };
     setDate(dateObj);
   };
