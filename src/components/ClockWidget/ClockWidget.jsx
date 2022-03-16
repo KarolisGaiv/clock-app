@@ -91,7 +91,7 @@ function ClockWidget({ setDayPhase }) {
       </div>
       <button className='expand-btn'>
         more
-        <img className='test' src={ArrowDown} alt='' />
+        <img src={ArrowDown} alt='expand button' />
       </button>
     </div>
   );
