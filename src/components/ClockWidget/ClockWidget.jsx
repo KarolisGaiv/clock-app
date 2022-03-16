@@ -5,7 +5,7 @@ import MoonIcon from '../../assets/desktop/icon-moon.svg';
 import ArrowUp from '../../assets/desktop/icon-arrow-up.svg';
 import ArrowDown from '../../assets/desktop/icon-arrow-down.svg';
 
-function ClockWidget({ setCurrentTime }) {
+function ClockWidget({ setDayPhase }) {
   const [date, setDate] = useState({});
   const [greeting, setGreeting] = useState('Good afternoon');
   const [timeOfDay, setTimeofDay] = useState('day');
@@ -34,19 +34,21 @@ function ClockWidget({ setCurrentTime }) {
       minutes: ('0' + current_date.getMinutes()).slice(-2),
       abbreviation: data.abbreviation,
     };
-
     setDate(dateObj);
-    setCurrentTime(dateObj.hours);
   };
 
   function getGreeting(currentHour) {
     if (currentHour >= 5 && currentHour < 12) {
       setGreeting('Good morning');
+      // send current day phase up to parent App.js
+      setDayPhase('day');
     } else if (currentHour >= 12 && currentHour < 18) {
       setGreeting('Good afternoon');
+      setDayPhase('day');
     } else {
       setGreeting('Good evening');
       setTimeofDay('night');
+      setDayPhase('night');
     }
   }
 
