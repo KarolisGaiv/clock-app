@@ -13,7 +13,7 @@ function ClockWidget({ setCurrentTime }) {
 
   useEffect(() => {
     fetchTime();
-    getGreeting();
+    getGreeting(date.hours);
     getLocation();
 
     const interval = setInterval(() => {
@@ -34,21 +34,19 @@ function ClockWidget({ setCurrentTime }) {
       minutes: ('0' + current_date.getMinutes()).slice(-2),
       abbreviation: data.abbreviation,
     };
+
     setDate(dateObj);
     setCurrentTime(dateObj.hours);
   };
 
-  function getGreeting() {
-    console.log(date.hours);
-    if (date.hours >= 12 && date.hours < 18) {
+  function getGreeting(currentHour) {
+    if (currentHour >= 5 && currentHour < 12) {
+      setGreeting('Good morning');
+    } else if (currentHour >= 12 && currentHour < 18) {
       setGreeting('Good afternoon');
-      setTimeofDay('day');
-    } else if (date.hours >= 18 && date.hours < 5) {
+    } else {
       setGreeting('Good evening');
       setTimeofDay('night');
-    } else {
-      setGreeting('Good morning');
-      setTimeofDay('day');
     }
   }
 
