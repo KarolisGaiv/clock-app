@@ -104,7 +104,24 @@ function ClockWidget({ setDayPhase }) {
         more
         <img src={ArrowDown} alt='expand button' />
       </button>
-      <div className={modalClasses}></div>
+      <div className={modalClasses}>
+        <div className='test__stat-wrapper'>
+          <p className='test__left-stat'>current timezone</p>
+          <p className='test__right-stat'>{date.timezone}</p>
+        </div>
+        <div className='test__stat-wrapper'>
+          <p className='test__left-stat'>day of the year</p>
+          <p className='test__right-stat'>{date.dayOfyear}</p>
+        </div>
+        <div className='test__stat-wrapper'>
+          <p className='test__left-stat'>day of the week</p>
+          <p className='test__right-stat'>{date.dayOfWeek}</p>
+        </div>
+        <div className='test__stat-wrapper'>
+          <p className='test__left-stat'>week number</p>
+          <p className='test__right-stat'>{date.week}</p>
+        </div>
+      </div>
     </div>
   );
 }
