@@ -65,3 +65,15 @@
     padding: 12px;
   }
 }
+
+.test {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(40.7742px);
+  display: none;
+  height: 200px;
+  padding: 48px 26px;
+
+  &.--expanded {
+    display: block;
+  }
+}

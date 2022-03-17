@@ -1,4 +1,5 @@
 import './clockWidget.scss';
+import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import SunIcon from '../../assets/desktop/icon-sun.svg';
 import MoonIcon from '../../assets/desktop/icon-moon.svg';
@@ -10,6 +11,10 @@ function ClockWidget({ setDayPhase }) {
   const [greeting, setGreeting] = useState('Good afternoon');
   const [timeOfDay, setTimeofDay] = useState('day');
   const [location, setLocation] = useState({});
+  const [isDateInfoExpanded, setIsDateInfoExpanded] = useState(false);
+  const modalClasses = classNames('test', {
+    'test --expanded': isDateInfoExpanded,
+  });
 
   useEffect(() => {
     fetchTime();
@@ -68,6 +73,12 @@ function ClockWidget({ setDayPhase }) {
     setLocation(locationObj);
   };
 
+  function expandModal() {
+    console.log(`before pressing modal state was ${isDateInfoExpanded}`);
+    setIsDateInfoExpanded(!isDateInfoExpanded);
+    console.log(`after pressing modal state is ${isDateInfoExpanded}`);
+  }
+
   return (
     <div className='clock-container'>
       <div className='clock-container__greeting'>
@@ -89,10 +100,11 @@ function ClockWidget({ setDayPhase }) {
       <div className='clock-container__location'>
         In {location.city}, {location.country_code}{' '}
       </div>
-      <button className='expand-btn'>
+      <button className='expand-btn' onClick={expandModal}>
         more
         <img src={ArrowDown} alt='expand button' />
       </button>
+      <div className={modalClasses}></div>
     </div>
   );
 }
