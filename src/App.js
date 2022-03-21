@@ -12,12 +12,13 @@ function App() {
   });
 
   return (
-    <div className='content__wrapper'>
+    <div className='wrapper'>
       <div className={backgroundClasses}></div>
-      <main>
+      <main className='content'>
         <Quote />
         <ClockWidget setDayPhase={setDayPhase} />
       </main>
+      <footer className='modal'></footer>
     </div>
   );
 }
