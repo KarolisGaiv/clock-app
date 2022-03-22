@@ -66,33 +66,33 @@
   }
 }
 
-.test {
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(40.7742px);
-  color: white;
-  display: none;
-  height: 200px;
-  padding: 48px 26px;
-  text-transform: uppercase;
+// .test {
+//   background: rgba(0, 0, 0, 0.75);
+//   backdrop-filter: blur(40.7742px);
+//   color: white;
+//   display: none;
+//   height: 200px;
+//   padding: 48px 26px;
+//   text-transform: uppercase;
 
-  &.--expanded {
-    display: block;
-  }
+//   &.--expanded {
+//     display: block;
+//   }
 
-  &__stat-wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
+//   &__stat-wrapper {
+//     display: flex;
+//     justify-content: space-between;
+//   }
 
-  &__left-stat {
-    font-size: 10px;
-    letter-spacing: 2px;
-    line-height: 28px;
-  }
+//   &__left-stat {
+//     font-size: 10px;
+//     letter-spacing: 2px;
+//     line-height: 28px;
+//   }
 
-  &__right-stat {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
-  }
-}
+//   &__right-stat {
+//     font-size: 20px;
+//     font-weight: 700;
+//     line-height: 24px;
+//   }
+// }
