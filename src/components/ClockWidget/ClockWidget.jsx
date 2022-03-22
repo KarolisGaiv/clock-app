@@ -8,10 +8,6 @@ import ArrowDown from '../../assets/desktop/icon-arrow-down.svg';
 
 function ClockWidget({ setIsModalActive, date, greeting, dayPhase }) {
   const [location, setLocation] = useState({});
-  const [isDateInfoExpanded, setIsDateInfoExpanded] = useState(false);
-  const modalClasses = classNames('test', {
-    'test --expanded': isDateInfoExpanded,
-  });
 
   useEffect(() => {
     getLocation();
@@ -28,10 +24,6 @@ function ClockWidget({ setIsModalActive, date, greeting, dayPhase }) {
     };
     setLocation(locationObj);
   };
-
-  // function expandModal() {
-  //   setIsModalActive(true);
-  // }
 
   return (
     <div className='clock-container'>

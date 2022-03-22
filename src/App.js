@@ -8,14 +8,10 @@ function App() {
   const [date, setDate] = useState({});
   const [isDayPhase, setIsDayPhase] = useState(true);
   const [greeting, setGreeting] = useState('');
-  const [isModalActive, setIsModalActive] = useState(false);
 
   const backgroundClasses = classNames('background', {
     'background --day': isDayPhase === true,
     'background --night': isDayPhase === false,
-  });
-  const modalClasses = classNames('modal', {
-    'modal --active': isModalActive === true,
   });
 
   useEffect(() => {
@@ -76,7 +72,6 @@ function App() {
           dayPhase={isDayPhase}
         />
       </main>
-      <footer className={modalClasses}></footer>
     </div>
   );
 }
