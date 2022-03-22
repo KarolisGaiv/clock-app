@@ -20,6 +20,11 @@ body,
   height: 100%;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   color: $white;
   font-family: $main-font;

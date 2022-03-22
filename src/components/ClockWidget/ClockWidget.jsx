@@ -14,11 +14,6 @@ function ClockWidget({
   setIsAdditionalInfoShowed,
 }) {
   const [location, setLocation] = useState({});
-  const [isModalExpanded, setIsModalExpanded] = useState(false);
-
-  const modalClasses = classNames('modal', {
-    'modal --expanded': isModalExpanded === true,
-  });
 
   useEffect(() => {
     getLocation();
@@ -37,7 +32,6 @@ function ClockWidget({
   };
 
   function toggleAdditionalInformation() {
-    setIsModalExpanded(!isModalExpanded);
     setIsAdditionalInfoShowed(!isAdditionalInfoShowed);
   }
 
@@ -66,7 +60,6 @@ function ClockWidget({
         more
         <img src={ArrowDown} alt='expand button' />
       </button>
-      <div className={modalClasses}></div>
     </div>
   );
 }

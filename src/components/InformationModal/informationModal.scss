@@ -1,0 +1,10 @@
+@import '../../styles/base/base';
+
+.test {
+  height: 0;
+
+  &.--active {
+    background: indianred;
+    height: 250px;
+  }
+}

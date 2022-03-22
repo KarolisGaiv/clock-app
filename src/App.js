@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import './styles/main.scss';
 import Quote from './components/Quote/Quote';
 import ClockWidget from './components/ClockWidget/ClockWidget';
+import InformationModal from './components/InformationModal/InformationModal';
 
 function App() {
   const [date, setDate] = useState({});
@@ -74,6 +75,7 @@ function App() {
           setIsAdditionalInfoShowed={setIsAdditionalInfoShowed}
         />
       </main>
+      <InformationModal isAdditionalInfoShowed={isAdditionalInfoShowed} />
     </div>
   );
 }
