@@ -1,10 +1,11 @@
 @import '../../styles/base/base';
 
-.test {
+.information-wrapper {
   height: 0;
 
   &.--active {
-    background: indianred;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(40.7742px);
     height: 250px;
   }
 }
