@@ -8,6 +8,7 @@ function App() {
   const [date, setDate] = useState({});
   const [isDayPhase, setIsDayPhase] = useState(true);
   const [greeting, setGreeting] = useState('');
+  const [isAdditionalInfoShowed, setIsAdditionalInfoShowed] = useState(false);
 
   const backgroundClasses = classNames('background', {
     'background --day': isDayPhase === true,
@@ -64,12 +65,13 @@ function App() {
     <div className='wrapper'>
       <div className={backgroundClasses}></div>
       <main className='content'>
-        <Quote />
+        <Quote isAdditionalInfoShowed={isAdditionalInfoShowed} />
         <ClockWidget
-          setIsModalActive={setIsModalActive}
           date={date}
           greeting={greeting}
           dayPhase={isDayPhase}
+          isAdditionalInfoShowed={isAdditionalInfoShowed}
+          setIsAdditionalInfoShowed={setIsAdditionalInfoShowed}
         />
       </main>
     </div>

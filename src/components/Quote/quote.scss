@@ -8,6 +8,10 @@
   font-size: 12px;
   line-height: 22px;
 
+  &.--expanded {
+    display: none;
+  }
+
   &__text-wrapper {
     display: flex;
     flex-direction: column;

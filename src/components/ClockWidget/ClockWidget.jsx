@@ -6,8 +6,19 @@ import MoonIcon from '../../assets/desktop/icon-moon.svg';
 import ArrowUp from '../../assets/desktop/icon-arrow-up.svg';
 import ArrowDown from '../../assets/desktop/icon-arrow-down.svg';
 
-function ClockWidget({ setIsModalActive, date, greeting, dayPhase }) {
+function ClockWidget({
+  date,
+  greeting,
+  dayPhase,
+  isAdditionalInfoShowed,
+  setIsAdditionalInfoShowed,
+}) {
   const [location, setLocation] = useState({});
+  const [isModalExpanded, setIsModalExpanded] = useState(false);
+
+  const modalClasses = classNames('modal', {
+    'modal --expanded': isModalExpanded === true,
+  });
 
   useEffect(() => {
     getLocation();
@@ -24,6 +35,11 @@ function ClockWidget({ setIsModalActive, date, greeting, dayPhase }) {
     };
     setLocation(locationObj);
   };
+
+  function toggleAdditionalInformation() {
+    setIsModalExpanded(!isModalExpanded);
+    setIsAdditionalInfoShowed(!isAdditionalInfoShowed);
+  }
 
   return (
     <div className='clock-container'>
@@ -46,28 +62,11 @@ function ClockWidget({ setIsModalActive, date, greeting, dayPhase }) {
       <div className='clock-container__location'>
         In {location.city}, {location.country_code}{' '}
       </div>
-      <button className='expand-btn'>
+      <button className='expand-btn' onClick={toggleAdditionalInformation}>
         more
         <img src={ArrowDown} alt='expand button' />
       </button>
-      {/* <div className={modalClasses}>
-        <div className='test__stat-wrapper'>
-          <p className='test__left-stat'>current timezone</p>
-          <p className='test__right-stat'>{date.timezone}</p>
-        </div>
-        <div className='test__stat-wrapper'>
-          <p className='test__left-stat'>day of the year</p>
-          <p className='test__right-stat'>{date.dayOfyear}</p>
-        </div>
-        <div className='test__stat-wrapper'>
-          <p className='test__left-stat'>day of the week</p>
-          <p className='test__right-stat'>{date.dayOfWeek}</p>
-        </div>
-        <div className='test__stat-wrapper'>
-          <p className='test__left-stat'>week number</p>
-          <p className='test__right-stat'>{date.week}</p>
-        </div>
-      </div> */}
+      <div className={modalClasses}></div>
     </div>
   );
 }

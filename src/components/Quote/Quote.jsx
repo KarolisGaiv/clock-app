@@ -1,10 +1,15 @@
 import './quote.scss';
+import classNames from 'classnames';
 import React, { useState, useEffect } from 'react';
 import RefreshBtn from '../../assets/refreshBtn.svg';
 
-function Quote() {
+function Quote({ isAdditionalInfoShowed }) {
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
+
+  const quoteContainerClasses = classNames('quote-container', {
+    'quote-container --expanded': isAdditionalInfoShowed === true,
+  });
 
   useEffect(() => {
     fetchQuote();
@@ -24,7 +29,7 @@ function Quote() {
   }
 
   return (
-    <div className='quote-container'>
+    <div className={quoteContainerClasses}>
       <div className='quote-container__text-wrapper'>
         <div className='quote-container__quote'>"{quote}"</div>
         <div className='quote-container__author'>{author}</div>
