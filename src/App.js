@@ -7,7 +7,7 @@ import InformationModal from './components/InformationModal/InformationModal';
 
 function App() {
   const [date, setDate] = useState({});
-  const [isDayPhase, setIsDayPhase] = useState(true);
+  const [isDayPhase, setIsDayPhase] = useState();
   const [greeting, setGreeting] = useState('');
   const [isAdditionalInfoShowed, setIsAdditionalInfoShowed] = useState(false);
 
@@ -51,7 +51,9 @@ function App() {
   };
 
   function getDayPhase() {
-    if (date.hours >= 18 && date.hours < 5) {
+    if (date.hours < 18 && date.hours > 5) {
+      setIsDayPhase(true);
+    } else {
       setIsDayPhase(false);
     }
   }
@@ -79,7 +81,10 @@ function App() {
           setIsAdditionalInfoShowed={setIsAdditionalInfoShowed}
         />
       </main>
-      <InformationModal isAdditionalInfoShowed={isAdditionalInfoShowed} />
+      <InformationModal
+        isAdditionalInfoShowed={isAdditionalInfoShowed}
+        date={date}
+      />
     </div>
   );
 }

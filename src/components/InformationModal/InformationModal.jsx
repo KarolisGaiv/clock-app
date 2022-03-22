@@ -2,7 +2,7 @@ import React from 'react';
 import './informationModal.scss';
 import classNames from 'classnames';
 
-function InformationModal({ isAdditionalInfoShowed }) {
+function InformationModal({ isAdditionalInfoShowed, date }) {
   const modalClassnames = classNames('information-wrapper', {
     'information-wrapper --active': isAdditionalInfoShowed,
   });
