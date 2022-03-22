@@ -16,6 +16,10 @@ function App() {
     'background --night': isDayPhase === false,
   });
 
+  const contentClasses = classNames('content', {
+    'content --expanded': isAdditionalInfoShowed,
+  });
+
   useEffect(() => {
     fetchTime();
     getDayPhase();
@@ -65,7 +69,7 @@ function App() {
   return (
     <div className='wrapper'>
       <div className={backgroundClasses}></div>
-      <main className='content'>
+      <main className={contentClasses}>
         <Quote isAdditionalInfoShowed={isAdditionalInfoShowed} />
         <ClockWidget
           date={date}
