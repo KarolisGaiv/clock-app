@@ -57,20 +57,15 @@
   padding-left: 18px;
   text-transform: uppercase;
 
-  & img {
+  &__icon {
     background: #303030;
     border-radius: 50%;
     height: 32px;
     margin: 3px 4px 4px 15px;
     padding: 12px;
-  }
-}
 
-.modal {
-  background: cadetblue;
-  height: 0;
-
-  &.--expanded {
-    height: 200px;
+    &.--active {
+      transform: rotate(180deg);
+    }
   }
 }

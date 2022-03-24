@@ -14,6 +14,9 @@ function ClockWidget({
   setIsAdditionalInfoShowed,
 }) {
   const [location, setLocation] = useState({});
+  const btnIconClasses = classNames('expand-btn__icon', {
+    'expand-btn__icon --active': isAdditionalInfoShowed,
+  });
 
   useEffect(() => {
     getLocation();
@@ -58,7 +61,7 @@ function ClockWidget({
       </div>
       <button className='expand-btn' onClick={toggleAdditionalInformation}>
         {isAdditionalInfoShowed ? 'less' : 'more'}
-        <img src={ArrowDown} alt='expand button' />
+        <img className={btnIconClasses} src={ArrowDown} alt='expand button' />
       </button>
     </div>
   );
