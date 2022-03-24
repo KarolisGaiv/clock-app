@@ -96,12 +96,3 @@ body {
   z-index: 1;
   background: rgba(0, 0, 0, 0.4);
 }
-
-.modal {
-  height: 0;
-
-  &.--active {
-    background: green;
-    height: 200px;
-  }
-}

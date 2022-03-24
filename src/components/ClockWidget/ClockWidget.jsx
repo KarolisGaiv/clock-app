@@ -57,7 +57,7 @@ function ClockWidget({
         In {location.city}, {location.country_code}{' '}
       </div>
       <button className='expand-btn' onClick={toggleAdditionalInformation}>
-        more
+        {isAdditionalInfoShowed ? 'less' : 'more'}
         <img src={ArrowDown} alt='expand button' />
       </button>
     </div>
