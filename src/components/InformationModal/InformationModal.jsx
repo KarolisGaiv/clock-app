@@ -7,7 +7,14 @@ function InformationModal({ isAdditionalInfoShowed, date }) {
     'information-wrapper --active': isAdditionalInfoShowed,
   });
 
-  return <footer className={modalClassnames}></footer>;
+  return (
+    <footer className={modalClassnames}>
+      <div className='information-wrapper__line'>
+        <p>current timezone</p>
+        <p>{date.timezone}</p>
+      </div>
+    </footer>
+  );
 }
 
 export default InformationModal;

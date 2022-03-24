@@ -7,13 +7,13 @@ import InformationModal from './components/InformationModal/InformationModal';
 
 function App() {
   const [date, setDate] = useState({});
-  const [isDayPhase, setIsDayPhase] = useState();
+  const [isNightPhase, setIsNightPhase] = useState();
   const [greeting, setGreeting] = useState('');
   const [isAdditionalInfoShowed, setIsAdditionalInfoShowed] = useState(false);
 
   const backgroundClasses = classNames('background', {
-    'background --day': isDayPhase === true,
-    'background --night': isDayPhase === false,
+    'background --night': isNightPhase === true,
+    'background --day': isNightPhase === false,
   });
 
   const contentClasses = classNames('content', {
@@ -22,11 +22,9 @@ function App() {
 
   useEffect(() => {
     fetchTime();
-    getDayPhase();
 
     const interval = setInterval(() => {
       fetchTime();
-      getDayPhase();
     }, 30000);
 
     return () => clearInterval(interval);
@@ -48,13 +46,14 @@ function App() {
     };
     setDate(dateObj);
     getGreeting(dateObj.hours);
+    getDayPhase();
   };
 
   function getDayPhase() {
-    if (date.hours < 18 && date.hours > 5) {
-      setIsDayPhase(true);
+    if (date.hours >= 18 && date.hours < 5) {
+      setIsNightPhase(true);
     } else {
-      setIsDayPhase(false);
+      setIsNightPhase(false);
     }
   }
 
@@ -76,7 +75,7 @@ function App() {
         <ClockWidget
           date={date}
           greeting={greeting}
-          dayPhase={isDayPhase}
+          dayPhase={isNightPhase}
           isAdditionalInfoShowed={isAdditionalInfoShowed}
           setIsAdditionalInfoShowed={setIsAdditionalInfoShowed}
         />
