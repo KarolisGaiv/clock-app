@@ -47,6 +47,7 @@
   align-items: center;
   border: none;
   border-radius: 28px;
+  cursor: pointer;
   display: flex;
   font-family: inherit;
   font-size: 12px;
@@ -56,6 +57,13 @@
   margin-top: 48px;
   padding-left: 18px;
   text-transform: uppercase;
+
+  // Change icon background color
+  &:hover {
+    & * {
+      background: #999999;
+    }
+  }
 
   &__icon {
     background: #303030;
