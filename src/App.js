@@ -83,6 +83,7 @@ function App() {
       <InformationModal
         isAdditionalInfoShowed={isAdditionalInfoShowed}
         date={date}
+        isNightPhase={isNightPhase}
       />
     </div>
   );

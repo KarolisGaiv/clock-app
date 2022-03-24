@@ -2,9 +2,11 @@ import React from 'react';
 import './informationModal.scss';
 import classNames from 'classnames';
 
-function InformationModal({ isAdditionalInfoShowed, date }) {
+function InformationModal({ isAdditionalInfoShowed, date, isNightPhase }) {
   const modalClassnames = classNames('information-wrapper', {
-    'information-wrapper --active': isAdditionalInfoShowed,
+    'information-wrapper --active-day': isAdditionalInfoShowed && !isNightPhase,
+    'information-wrapepr --active-night':
+      isAdditionalInfoShowed && isNightPhase,
   });
 
   return (
