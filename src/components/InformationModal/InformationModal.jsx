@@ -9,9 +9,29 @@ function InformationModal({ isAdditionalInfoShowed, date }) {
 
   return (
     <footer className={modalClassnames}>
-      <div className='information-wrapper__line'>
-        <p>current timezone</p>
-        <p>{date.timezone}</p>
+      <div className='information-wrapper__data-field'>
+        <p className='information-wrapper__data-field__name'>
+          current timezone
+        </p>
+        <p className='information-wrapper__data-field__value'>
+          {date.timezone}
+        </p>
+      </div>
+      <div className='information-wrapper__data-field'>
+        <p className='information-wrapper__data-field__name'>day of the year</p>
+        <p className='information-wrapper__data-field__value'>
+          {date.dayOfyear}
+        </p>
+      </div>
+      <div className='information-wrapper__data-field'>
+        <p className='information-wrapper__data-field__name'>day of the week</p>
+        <p className='information-wrapper__data-field__value'>
+          {date.dayOfWeek}
+        </p>
+      </div>
+      <div className='information-wrapper__data-field'>
+        <p className='information-wrapper__data-field__name'>week number</p>
+        <p className='information-wrapper__data-field__value'>{date.week}</p>
       </div>
     </footer>
   );

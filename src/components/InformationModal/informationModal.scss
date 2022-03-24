@@ -2,11 +2,35 @@
 
 .information-wrapper {
   height: 0;
+  opacity: 0;
+  overflow: hidden;
+  text-transform: uppercase;
 
   &.--active {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(40.7742px);
     height: 250px;
+    opacity: 1;
     padding: 48px 26px;
+  }
+
+  &__data-field {
+    align-items: center;
+    display: flex;
+    color: $mine-shaft;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &__name {
+      font-size: 10px;
+      letter-spacing: 2px;
+      line-height: 28px;
+    }
+
+    &__value {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+    }
   }
 }
