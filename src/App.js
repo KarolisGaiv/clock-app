@@ -46,24 +46,19 @@ function App() {
     };
     setDate(dateObj);
     getGreeting(dateObj.hours);
-    getDayPhase();
   };
-
-  function getDayPhase() {
-    if (date.hours >= 18 && date.hours < 5) {
-      setIsNightPhase(true);
-    } else {
-      setIsNightPhase(false);
-    }
-  }
 
   function getGreeting(currentHour) {
     if (currentHour >= 5 && currentHour < 12) {
       setGreeting('Good Morning');
+      // set day phase status to determine app background
+      setIsNightPhase(false);
     } else if (currentHour >= 12 && currentHour < 18) {
       setGreeting('Good Afternoon');
+      setIsNightPhase(false);
     } else {
       setGreeting('Good Evening');
+      setIsNightPhase(true);
     }
   }
 
