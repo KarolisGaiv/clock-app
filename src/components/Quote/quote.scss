@@ -10,6 +10,9 @@
   @media (min-width: $breakpoint-tablet) {
     display: flex;
     max-width: 575px;
+
+    font-size: 18px;
+    line-height: 28px;
   }
 
   &.--expanded {
@@ -21,8 +24,20 @@
     flex-direction: column;
   }
 
+  &__quote {
+    // @media (min-width: $breakpoint-tablet) {
+    //   font-size: 18px;
+    //   line-height: 28px;
+    // }
+  }
+
   &__author {
     margin-top: 8px;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-weight: bold;
+      margin-top: 12px;
+    }
   }
 }
 
@@ -30,4 +45,8 @@
   align-self: start;
   background: none;
   border: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 5px;
+  }
 }
