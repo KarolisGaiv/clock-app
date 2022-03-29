@@ -3,13 +3,12 @@ import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
 import SunIcon from '../../assets/desktop/icon-sun.svg';
 import MoonIcon from '../../assets/desktop/icon-moon.svg';
-import ArrowUp from '../../assets/desktop/icon-arrow-up.svg';
 import ArrowDown from '../../assets/desktop/icon-arrow-down.svg';
 
 function ClockWidget({
   date,
   greeting,
-  dayPhase,
+  currentDayPhase,
   isAdditionalInfoShowed,
   setIsAdditionalInfoShowed,
 }) {
@@ -41,10 +40,10 @@ function ClockWidget({
   return (
     <div className='clock-container'>
       <div className='clock-container__greeting'>
-        {dayPhase ? (
-          <img src={SunIcon} alt='sun icon' />
-        ) : (
+        {currentDayPhase ? (
           <img src={MoonIcon} alt='moon icon' />
+        ) : (
+          <img src={SunIcon} alt='sun icon' />
         )}
 
         {greeting}

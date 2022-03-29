@@ -70,7 +70,7 @@ function App() {
         <ClockWidget
           date={date}
           greeting={greeting}
-          dayPhase={isNightPhase}
+          currentDayPhase={isNightPhase}
           isAdditionalInfoShowed={isAdditionalInfoShowed}
           setIsAdditionalInfoShowed={setIsAdditionalInfoShowed}
         />
