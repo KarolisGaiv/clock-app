@@ -2,11 +2,15 @@
 
 .quote-container {
   column-gap: 16px;
-  // color: $white;
   display: grid;
   grid-template-columns: 1fr 18px;
   font-size: 12px;
   line-height: 22px;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+    max-width: 575px;
+  }
 
   &.--expanded {
     display: none;
