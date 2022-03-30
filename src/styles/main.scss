@@ -43,6 +43,10 @@ body {
 
   &.--expanded {
     height: calc(100% - 250px);
+
+    @media (min-width: $breakpoint-tablet) {
+      height: calc(100% - 400px);
+    }
   }
 }
 

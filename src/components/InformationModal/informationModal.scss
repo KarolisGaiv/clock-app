@@ -6,22 +6,32 @@
   overflow: hidden;
   text-transform: uppercase;
 
+  &.--active-day,
+  &.--active-night {
+    height: 250px;
+    opacity: 1;
+    padding: 48px 26px;
+
+    @media (min-width: $breakpoint-tablet) {
+      display: grid;
+      column-gap: 80px;
+      grid-template-columns: 1fr 1fr;
+      height: 400px;
+      padding: 120px 64px;
+      row-gap: 50px;
+    }
+  }
+
   &.--active-day {
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(40.7742px);
     color: $mine-shaft;
-    height: 250px;
-    opacity: 1;
-    padding: 48px 26px;
   }
 
   &.--active-night {
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(40.77px);
     color: $white;
-    height: 250px;
-    opacity: 1;
-    padding: 48px 26px;
   }
 
   &__data-field {
@@ -30,16 +40,34 @@
     justify-content: space-between;
     margin-bottom: 16px;
 
+    @media (min-width: $breakpoint-tablet) {
+      align-items: start;
+      flex-direction: column;
+      justify-content: initial;
+      margin-bottom: 0;
+    }
+
     &__name {
       font-size: 10px;
       letter-spacing: 2px;
       line-height: 28px;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 13px;
+        letter-spacing: 2.6px;
+      }
     }
 
     &__value {
       font-size: 20px;
       font-weight: 700;
       line-height: 24px;
+      text-transform: capitalize;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 40px;
+        line-height: 48px;
+      }
     }
   }
 }
