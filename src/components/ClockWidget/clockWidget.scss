@@ -10,6 +10,11 @@
     line-height: 25px;
     text-transform: uppercase;
 
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 20px;
+      letter-spacing: 4px;
+    }
+
     & img {
       margin-right: 16px;
     }
