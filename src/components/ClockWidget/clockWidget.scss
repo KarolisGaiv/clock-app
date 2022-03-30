@@ -87,7 +87,7 @@
 
   // Change icon background color
   &:hover {
-    & * {
+    & *:not(span) {
       background: #999999;
     }
   }
