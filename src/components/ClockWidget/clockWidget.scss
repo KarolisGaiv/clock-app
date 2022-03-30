@@ -79,11 +79,22 @@
   padding-left: 18px;
   text-transform: uppercase;
 
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 16px;
+    letter-spacing: 5px;
+    padding-left: 20px;
+  }
+
   // Change icon background color
   &:hover {
     & * {
       background: #999999;
     }
+  }
+
+  // Change button text color
+  & span {
+    opacity: 50%;
   }
 
   &__icon {
@@ -92,6 +103,12 @@
     height: 32px;
     margin: 3px 4px 4px 15px;
     padding: 12px;
+
+    @media (min-width: $breakpoint-tablet) {
+      height: 40px;
+      margin: 8px 8px 8px 12px;
+      width: 45px;
+    }
 
     &.--active {
       transform: rotate(180deg);
