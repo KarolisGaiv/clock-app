@@ -20,6 +20,10 @@
       padding: 120px 64px;
       row-gap: 50px;
     }
+
+    @media (min-width: $breakpoint-laptop) {
+      padding: 74px 165px;
+    }
   }
 
   &.--active-day {
