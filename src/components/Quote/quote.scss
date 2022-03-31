@@ -24,13 +24,6 @@
     flex-direction: column;
   }
 
-  &__quote {
-    // @media (min-width: $breakpoint-tablet) {
-    //   font-size: 18px;
-    //   line-height: 28px;
-    // }
-  }
-
   &__author {
     margin-top: 8px;
 
@@ -45,6 +38,7 @@
   align-self: start;
   background: none;
   border: none;
+  cursor: pointer;
 
   @media (min-width: $breakpoint-tablet) {
     margin-top: 5px;

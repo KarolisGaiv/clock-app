@@ -41,6 +41,10 @@ body {
     padding: 80px 64px 64px 64px;
   }
 
+  @media (min-width: $breakpoint-laptop) {
+    padding: 56px 165px 98px 165px;
+  }
+
   &.--expanded {
     height: calc(100% - 250px);
 
