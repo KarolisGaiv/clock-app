@@ -6,6 +6,7 @@
   grid-template-columns: 1fr 18px;
   font-size: 12px;
   line-height: 22px;
+  margin-bottom: 30px;
 
   @media (min-width: $breakpoint-tablet) {
     display: flex;
