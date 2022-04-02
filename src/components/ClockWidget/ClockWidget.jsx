@@ -48,13 +48,13 @@ function ClockWidget({
 
         {greeting}
       </div>
-      <div className='clock-container__time'>
+      <h1 className='clock-container__time'>
         <p className='clock-container__time__current-date'>{date.hours}:</p>
         <p className='clock-container__time__current-date'>{date.minutes}</p>
         <span className='clock-container__time__time-zone'>
           {date.abbreviation}
         </span>
-      </div>
+      </h1>
       <div className='clock-container__location'>
         In {location.city}, {location.country_code}{' '}
       </div>
